@@ -1,10 +1,41 @@
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .caption {
+            font-size: 15px;
+        }
+
+        .button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            padding: 10px;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
 <h1>results page.</h1>
 
-<div style="display: flex">
+<div class="grid-container">
     <% data["Search"].forEach(function(movie){ %>
-    <div style="display: inline">
+    <div class="grid-item">
         <img src="<%= movie['Poster'] %>" alt="">
-        <figcaption style="display: block">
+        <figcaption class="caption" style="display: block">
             <strong><%= movie["Title"] %></strong> - <%= movie["Year"] %>
         </figcaption>
     </div>
@@ -12,4 +43,6 @@
 
 </div>
 
-<a href="/search">another search.</a>
+<div class="center">
+<a class="button" href="/search">another search.</a>
+</div>
